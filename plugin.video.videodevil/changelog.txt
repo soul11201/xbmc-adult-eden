@@ -1,3 +1,107 @@
+[B]Version 1.7.89[/B]
+
+- Added portuguese translation
+- Updated: moviesand
+- Fixed: search
+- Updated: ero-erodouga
+- Fixed: search
+- Updated: fapdu
+- Added: search
+- Updated: gfvideos
+- Added: search
+- Updated: hardsextube
+- Fixed: categories
+- Added: search
+- Updated: slutload
+- Fixed: search
+- Updated: sunporno
+- Fixed: video regex
+- Fixed: categories
+- Fixed: search
+- Updated: extremetube
+- Fixed: categories
+- Fixed: video regex
+- Fixed: search
+
+[B]Version 1.7.88[/B]
+
+- Updated: videodevil.py
+- Cleanup and refactoring
+- Updated: motherless
+- Fixed: catcher
+- Updated: sunporno
+- Fixed: video regex
+- Updated: youporn
+- Fixed: video regex
+
+[B]Version 1.7.87[/B]
+
+- Updated: videodevil.py
+- Updated: sunporno
+- Fixed: video regex
+
+[B]Version 1.7.86[/B]
+
+- Updated: pornomovies
+- Fixed: catcher
+- Updated: pornoxo
+- Fixed: video regex
+- Updated: timtube
+- Fixed: catcher
+
+[B]Version 1.7.85[/B]
+
+- Updated: pornhub
+- Fixed: catcher
+
+[B]Version 1.7.84[/B]
+
+- Updated: moviesand
+- Fixed:  catcher
+
+[B]Version 1.7.83[/B]
+
+- Updated: freehdporn
+- Fixed: video regex
+- Fixed: catcher
+
+[B]Version 1.7.82[/B]
+
+- Updated: hardsextube
+- Fixed: video regex
+- Updated: slutload
+- Fixed: video regex
+- Updated: timtube
+- Fixed: video regex
+- Fixed: catcher
+
+[B]Version 1.7.81[/B]
+
+- Updated: empflix
+- Fixed: video regex
+- Updated: freehdporn
+- Fixed: video regex
+- Fixed: catcher
+
+[B]Version 1.7.80[/B]
+
+- Updated: pornhub
+- Fixed: video regex
+
+[B]Version 1.7.79[/B]
+
+- Updated: tnaflix
+- Fixed: video regex
+- Removed: yuvutu
+- Removed: boysfood
+- Removed: shufuni
+- Removed: keezmovies
+
+[B]Version 1.7.78[/B]
+
+- Updated: xhamster
+- Fixed: catcher
+
 [B]Version 1.7.77[/B]
 
 - Removed: 4tube

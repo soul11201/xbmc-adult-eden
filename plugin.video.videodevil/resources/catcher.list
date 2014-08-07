@@ -42,9 +42,11 @@ title=freehdporn.ws
 target=flashvars=.+?url480=(http[^&]+)
 url=%s
 quality=standard
-target=flashvars=.+?url720=(http[^\&]+)
+target=flashvars=.+?url720=(http[^&]+)
+url=%s
 quality=high
-target=flashvars=.+?url360=(http[^\&]+)
+target=flashvars=.+?url360=(http[^&]+)
+url=%s
 quality=low
 ########################################################
 title=gfvideos.com
@@ -118,11 +120,6 @@ url=http://kcoolonline.com/token.php
 data=url=%s
 quality=standard
 ########################################################
-title=shufuni.com
-target=_videoFilePathHD = "([^"]+)"
-url=%s
-quality=standard
-########################################################
 title=youporn.com
 target=<a href="([^"]+)">\s*MP4
 url=%s
@@ -142,7 +139,7 @@ url=%s
 quality=standard
 ########################################################
 title=moviesand.com
-target=so.addVariable[(]"file", "(http[^']+.flv.*?)"[)];
+target=so.addVariable[(]"file", "(http[^"]+)"[)];
 url=%s
 quality=standard
 ########################################################
@@ -158,9 +155,8 @@ url=%s
 quality=standard
 ########################################################
 title=xhamster.com
-target='file': '(.+?.flv)'
+target=file="([^"]+mp4)"
 url=%s
-build=http://xhcdn.com/key=%s
 quality=standard
 ########################################################
 title=hotgoo.com
@@ -168,26 +164,14 @@ target=so.addVariable\('file','(.+?)'
 url=%s
 quality=standard
 ########################################################
-title=boysfood.com
-target=href="([^"]+)"> mp4</a>
-url=%s
-extension=wmv
-quality=standard
-########################################################
-title=keezmovies.com
-target=video_url=(http.+)[&]amp;postroll_url
-url=%s
-header=Cookie|age_verified=1
-quality=standard
-########################################################
 title=motherless.com
-target=fileurl = '([^']+flv)'
+target=fileurl = '([^']+mp4)'
 url=%s
 build=%s?start=0
 quality=standard
 ########################################################
 title=pornomovies
-target=(http[^"]+.flv[^"]+)
+target=(http[^"]+.mp4[^"]+)
 url=%s
 quality=standard
 ########################################################
@@ -198,7 +182,7 @@ build=http://en.clipa.tv%s
 quality=standard
 ########################################################
 title=simple-match
-target=(http://[^"<]+?.flv)
+target=(http://[^"<]+?.(mp4|flv))
 url=%s
 quality=standard
 ########################################################
@@ -207,12 +191,6 @@ target="(http%3[^"]+mp4[^"]+)";\s+flashvars.(r|quality_\d+)p = ""
 url=%s
 action=unquote
 extension=mp4
-quality=standard
-########################################################
-title=yuvutu.com
-target=file: "([^"]+)"
-url=%s
-header=Cookie|gndr=F
 quality=standard
 ########################################################
 title=fapdu.com
@@ -250,8 +228,9 @@ url=%s
 quality=standard
 ########################################################
 title=m.pornhub.com
-target=<a href="([^"]+\.mp4[^"]*)"
+target=href="([^"]+\.mp4[^"]*)"
 url=%s
+header=Cookie|platform=mobile
 quality=low
 ########################################################
 #title=viloader.net

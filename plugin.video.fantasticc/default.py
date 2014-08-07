@@ -41,8 +41,9 @@ fip = 'http://77.247.181.97/'
 
 # 3rd Party video Sites that are currently supported are listed below
 
-SUPPORTEDSITES = ['deviantclip', 'empflix', 'madthumbs', 'pornhub', 'redtube', 'tnaflix',
-                  'tube8', 'xhamster', 'xtube', 'xvideos', 'you_porn']
+SUPPORTEDSITES = ['deviantclip', 'empflix', 'madthumbs', 'pornhub', 'redtube',
+                  'tnaflix', 'tube8', 'xhamster', 'xtube', 'xvideos',
+                  'you_porn']
 
 
 def get_html(url):
@@ -306,11 +307,12 @@ def SEARCH_RESULTS(url, html=False):
 def INDEX(url):
     html = get_html(url)
     if 'collection' in url: # Collections
-        match = re.compile('<a\s+title="(.+?)" href="(.+?)">\s*<img src="(.+?)"'
-                           ' border="0" alt="(.+?)"  '
+        match = re.compile('<a\s+title="([^"]+)" href="([^"]+)">\s*<img '
+                           'src="([^"]+)"'
+                           ' border="0" alt="([^"]+)"  '
                            'class="collection_image" />').findall(html)
         for name, gurl, thumbnail, junk in match:
-            vid_id = string.split(gurl, '=')[2][:-5]
+            vid_id = string.split(gurl, '/')[-2]
             realurl = 'http://fantasti.cc/video.php?id=%s' % vid_id
             mode = 4
             print 'realurl %s' % realurl
@@ -469,11 +471,10 @@ def GET_LINK(url, collections):
             print 'fetchurl: %s' % fetchurl
         return fetchurl
     elif 'xhamster' in url:
-        match = re.compile('xhamster.com/movies/(.+?)/').findall(html)
-        html = get_html('http://xhamster.com/xembed.php?video=%s' % match[0])
-        match = re.compile('srv=(.+?)&image').findall(html)
-        fetchurl = match[0].replace('&file', '/key')
-        fetchurl = urllib.unquote(fetchurl)
+        match = re.compile('http://xhamster.com/movies/[^"]*').findall(html)
+        html = get_html(match[0])
+        match = re.compile('file="([^"]*.mp4)').findall(html)
+        fetchurl = match[0]
         print 'fetchurl: %s' % fetchurl
         return fetchurl
     elif 'hardsextube' in url:
@@ -481,6 +482,7 @@ def GET_LINK(url, collections):
         html = get_html('http://m.hardsextube.com/%s' % match[0])
         match = re.compile('href="(.+?)" .*playVideoLink').findall(html)
         fetchurl = match[0]
+        fetchurl = fetchurl.replace(' ', '+')
         print 'fetchurl: %s' % fetchurl
         return fetchurl
     elif 'xtube' in url:
